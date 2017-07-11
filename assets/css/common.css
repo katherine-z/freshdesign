@@ -1,0 +1,51 @@
+html, a { -webkit-tap-highlight-color: transparent; }
+
+h1, h2, h3, h4, h5, p, li, ul { margin: 0; padding: 0; }
+
+body { background-color: #fff; font-size: 18px; font-weight: 400; line-height: 1; -webkit-font-smoothing: antialiased; font-family: Arial; }
+
+.form_wrapper { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+.progress_bar { width: 200px; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -webkit-justify-content: space-between; -moz-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; margin: 50px auto; position: relative; z-index: 2; }
+
+.progress_bar span a { color: #000; text-decoration: none; cursor: pointer; }
+
+.progress_bar span.active { color: #40c781; }
+
+form { position: relative; }
+
+form label { position: absolute; left: 0; font-size: 18px; color: #000; padding: 10px 0; }
+
+form label.error { position: relative; display: block; margin-left: 100px; color: red; font-size: 16px; margin-top: 2px; width: 224px; padding: 0; }
+
+form p { margin-bottom: 10px; }
+
+form p span { position: relative; display: block; margin-left: 100px; font-size: 16px; margin-top: 2px; width: 224px; padding: 0; }
+
+form .parSubm { margin-bottom: 0; margin-top: 20px; }
+
+form input { margin-left: 100px; font-size: 18px; border: 1px solid black; -webkit-border-radius: 4px; border-radius: 4px; outline: none; padding: 10px 0 10px 5px; background-color: #fff; }
+
+form input.submit { color: white; text-decoration: none; padding: 0 15px; height: 35px; line-height: 35px; -webkit-border-radius: 3px; border-radius: 3px; background: #40c781; -webkit-box-shadow: 0 -3px #35a76e inset; box-shadow: 0 -3px #35a76e inset; -webkit-transition: 0.2s; -o-transition: 0.2s; -moz-transition: 0.2s; transition: 0.2s; border: none; cursor: pointer; }
+
+form input.submit:hover { background: #35a76e; }
+
+form#stepThree input { border: none; width: 300px; }
+
+form#stepThree input.submit { width: initial; }
+
+.to_prev_page { color: white; text-decoration: none; padding: 0 15px; height: 35px; line-height: 35px; -webkit-border-radius: 3px; border-radius: 3px; background: #40c781; -webkit-box-shadow: 0 -3px #35a76e inset; box-shadow: 0 -3px #35a76e inset; -webkit-transition: 0.2s; -o-transition: 0.2s; -moz-transition: 0.2s; transition: 0.2s; border: none; cursor: pointer; position: absolute; left: 0; bottom: 0; }
+
+.to_prev_page:hover { background: #35a76e; }
+
+input:disabled, textarea:disabled { color: #000; }
+
+@media screen and (max-width: 415px) { form input { margin-left: 85px; width: 153px; }
+  form input.submit { width: initial; }
+  form label.error { width: 153px; margin-left: 85px; }
+  form p span { width: 153px; margin-left: 85px; }
+  form#stepThree input { border: none; width: 150px; }
+  form#stepThree input.submit { width: initial; } }
+
+@media screen and (max-height: 525px) { .progress_bar { position: absolute; width: 50px; right: 0; margin: 0 20px 0 0; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
+  .progress_bar span { display: block; width: 100%; margin-bottom: 20px; } }

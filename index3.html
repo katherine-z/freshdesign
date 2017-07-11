@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>FreshDesign</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+
+<body>
+    <div class="progress_bar">
+      <span><a href="index.html">Шаг 1</a></span>
+      <span><a href="index2.html">Шаг 2</a></span>
+      <span class="active">Шаг 3</span>
+    </div>
+    <div class="form_wrapper">
+       <form id="stepThree" method="post">
+            <p>
+              <label for="camountFIN">Сумма:</label>
+              <input id="camountFIN" name="amount" type="text" disabled>
+            </p>
+            <p>
+              <label for="ctermFIN">Срок:</label>
+              <input id="ctermFIN" name="term" type="text" disabled>
+            </p>
+            <p>
+              <label for="cTINFIN">ИНН:</label>
+              <input id="cTINFIN" name="TIN" type="text" disabled>
+              <span id="your_age"></span>
+            </p>
+            <p>
+              <label for="clastnameFIN">Фамилия:</label>
+              <input id="clastnameFIN" name="lastname" type="text" disabled>
+            </p>
+            <p>
+              <label for="cnameFIN">Имя:</label>
+              <input id="cnameFIN" name="name" type="text" disabled>
+            </p>
+            <p>
+              <label for="ccityFIN">Город:</label>
+              <input id="ccityFIN" name="city" type="text" disabled>
+            </p>
+            <p class="parSubm">
+              <input class="submit" type="submit" value="Отправить">
+            </p>
+       </form>
+       <a href="index2.html" class="to_prev_page">Назад</a>
+    </div>
+    
+    <script src="assets/js/libs/jquery.js"></script>
+    <script src="assets/js/libs/jquery.validate.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script>
+    //using cookies
+         var COOKIES = {};
+         var cookieStr = document.cookie;
+         cookieStr.split(/; /).forEach(function(keyValuePair) {
+             var cookieName = keyValuePair.replace(/=.*$/, ""); 
+             var cookieValue = keyValuePair.replace(/^[^=]*\=/, ""); 
+             COOKIES[cookieName] = cookieValue;
+           });
+         document.getElementById("camountFIN").value = COOKIES["form/amount"];
+         document.getElementById("ctermFIN").value = COOKIES["form/term"];
+         document.getElementById("cTINFIN").value = COOKIES["form/TIN"];
+         document.getElementById("clastnameFIN").value = COOKIES["form/lastname"];
+         document.getElementById("cnameFIN").value = COOKIES["form/name"];
+         document.getElementById("ccityFIN").value = COOKIES["form/city"];
+
+         var state = { 'page_id': 3 };
+         var title = 'page 3';
+         var url = "index3.html?amount="+COOKIES["form/amount"]+"&term="+COOKIES["form/term"]+"&TIN="+COOKIES["form/TIN"]+"&lastname="+COOKIES["form/lastname"]+"&name="+COOKIES["form/name"]+"&city="+COOKIES["form/city"];
+
+         history.pushState(state, title, url);
+     </script>
+</body>
+
+</html>

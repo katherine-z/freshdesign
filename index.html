@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>FreshDesign</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+
+<body>
+  <div class="progress_bar">
+    <span class="active">Шаг 1</span>
+    <span>Шаг 2</span>
+    <span>Шаг 3</span>
+  </div>
+    <div class="form_wrapper">
+       <form id="stepOne" action="index2.html">
+            <p>
+              <label for="camount">Сумма:</label>
+              <input id="camount" name="amount" type="text">
+            </p>
+            <p>
+              <label for="cterm">Срок:</label>
+              <input id="cterm" name="term" type="text">
+            </p>
+            <p class="parSubm">
+              <input class="submit" type="submit" value="Далее" id="nextStep">
+            </p>
+       </form>
+    </div>
+    
+    <script src="assets/js/libs/jquery.js"></script>
+    <script src="assets/js/libs/jquery.validate.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script>
+    //adding values to cookies
+         var form = document.getElementById("stepOne");
+         form.addEventListener("blur", function( ) {
+           document.cookie = 'form/amount=' + document.getElementById('camount').value;
+           document.cookie = 'form/term=' + document.getElementById('cterm').value;
+          } , true);
+     </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>FreshDesign</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+
+<body>
+    <div class="progress_bar">
+      <span><a href="index.html">Шаг 1</a></span>
+      <span class="active">Шаг 2</span>
+      <span>Шаг 3</span>
+    </div>
+    <div class="form_wrapper">
+       <form id="stepTwo" action="index3.html">
+            <p>
+              <label for="cTIN">ИНН</label>
+              <input id="cTIN" name="TIN" type="text">
+              <span id="your_age"></span>
+            </p>
+            <p>
+              <label for="clastname">Фамилия</label>
+              <input id="clastname" name="lastname" type="text">
+            </p>
+            <p>
+              <label for="cname">Имя</label>
+              <input id="cname" name="name" type="text">
+            </p>
+            <p>
+              <label for="ccity">Город</label>
+              <input id="ccity" name="city" type="text">
+            </p>
+            <p class="parSubm">
+              <input class="submit" type="submit" value="Далее">
+            </p>
+       </form>
+       <a href="index.html" class="to_prev_page">Назад</a>
+    </div>
+    
+    <script src="assets/js/libs/jquery.js"></script>
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/flick/jquery-ui.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="assets/js/libs/jquery.validate.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script>
+      //adding values to cookies
+         var form = document.getElementById("stepTwo");
+         form.addEventListener("blur", function( ) {
+           document.cookie = 'form/TIN=' + document.getElementById('cTIN').value;
+           document.cookie = 'form/lastname=' + document.getElementById('clastname').value;
+            document.cookie = 'form/name=' + document.getElementById('cname').value;
+             document.cookie = 'form/city=' + document.getElementById('ccity').value;
+          } , true);
+
+     </script>
+</body>
+
+</html>
